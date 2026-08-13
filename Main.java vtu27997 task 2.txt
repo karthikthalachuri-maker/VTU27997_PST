@@ -1,0 +1,43 @@
+3.Find the maximum element in an array of n integers?
+
+import java.util.Scanner;
+
+public class MaxElement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input the size of the array
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Assume first element is the maximum
+        int max = arr[0];
+
+        // Find the maximum element
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        // Display the maximum element
+        System.out.println("Maximum element = " + max);
+
+        sc.close();
+    }
+}
+
+OUTPUT:
+
+Enter the number of elements: 5
+Enter the elements:
+10 25 8 40 15
+Maximum element = 40

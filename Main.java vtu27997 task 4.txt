@@ -1,0 +1,46 @@
+4.Given an array of integers and a positive integer K,write a program to find:The Kth smallest element?
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class KthSmallest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input the size of the array
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Input array elements
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Input K
+        System.out.print("Enter the value of K: ");
+        int k = sc.nextInt();
+
+        // Check if K is valid
+        if (k < 1 || k > n) {
+            System.out.println("Invalid value of K");
+        } else {
+            // Sort the array
+            Arrays.sort(arr);
+
+            // Print the Kth smallest element
+            System.out.println("The " + k + "th smallest element is: " + arr[k - 1]);
+        }
+
+        sc.close();
+    }
+}
+
+OUTPUT:
+Enter the number of elements: 6
+Enter the elements:
+7 10 4 3 20 15
+Enter the value of K: 3
+The 3th smallest element is: 7
